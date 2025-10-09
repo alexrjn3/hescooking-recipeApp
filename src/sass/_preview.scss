@@ -1,0 +1,320 @@
+.preview {
+  &__link {
+    &:link,
+    &:visited {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 3.25rem;
+      transition: all 0.3s;
+      border-right: 1px solid #fff;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-1;
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      background-color: $color-grey-light-1;
+    }
+  }
+
+  &__fig {
+    flex: 0 0 5.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 5.8rem;
+    margin-right: 2rem;
+    position: relative;
+    backface-visibility: hidden;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+      opacity: 0.4;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s;
+    }
+  }
+
+  &__data {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 2rem 1fr;
+    row-gap: 0.1rem;
+    align-items: center;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-size: 1.45rem;
+    color: $color-primary;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    // This is how text is truncated!
+    text-overflow: ellipsis;
+    max-width: 25rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__publisher {
+    font-size: 1.15rem;
+    color: $color-grey-dark-2;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__user-generated {
+    background-color: darken($color-grey-light-2, 2%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 10rem;
+
+    // margin-left: auto;
+    // margin-right: 1.75rem;
+
+    svg {
+      height: 1.8rem;
+      width: 1.8rem;
+      fill: $color-primary;
+    }
+    &:hover{
+      background-color: $color-grey-light-3 ;
+
+    }
+  }
+  &__bookmark-btn{
+    background-color: darken($color-grey-light-2, 2%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    margin-left: 3rem;
+    // margin-right: 1.75rem;
+
+    svg {
+      height: 1.8rem;
+      width: 1.8rem;
+      fill: $color-primary;
+    }
+    &:hover{
+      background-color: $color-grey-light-3 ;
+
+    }
+  }
+}
+
+.previewRec {
+  &__link {
+    &:link,
+    &:visited {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 3.25rem;
+      transition: all 0.3s;
+
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-3;
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      background-color: $color-grey-light-1;
+    }
+  }
+
+  &__fig {
+    flex: 0 0 16rem;
+    border-radius: 20%;
+    overflow: hidden;
+    height: 16rem;
+    width: 16rem;
+    position: relative;
+    backface-visibility: hidden;
+    margin-bottom: 2rem;
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+      opacity: 0.4;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s;
+    }
+  }
+
+  &__data {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 2rem;
+    row-gap: 0.1rem;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-size: 1.45rem;
+    color: $color-primary;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    // This is how text is truncated!
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    text-align: center;
+  }
+
+  &__publisher {
+    font-size: 1.15rem;
+    color: $color-grey-dark-2;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__user-generated {
+    background-color: darken($color-grey-light-2, 2%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10rem;
+
+    margin-left: auto;
+    margin-right: 1.75rem;
+
+    svg {
+      height: 1.2rem;
+      width: 1.2rem;
+      fill: $color-primary;
+    }
+  }
+}
+
+.grid_recommend {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    'grid0 grid1'
+    'grid2 grid3'
+    'grid4 grid5';
+  list-style: none;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.grid0 {
+  grid-area: grid0;
+}
+.grid1 {
+  grid-area: grid1;
+}
+.grid2 {
+  grid-area: grid2;
+}
+.grid3 {
+  grid-area: grid3;
+}
+.grid4 {
+  grid-area: grid4;
+}
+.grid5 {
+  grid-area: grid5;
+}
+
+.title_recommend {
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  padding-right: 4rem;
+  margin-bottom: 1.2rem;
+  color: $color-primary;
+  font-weight: 700;
+  text-align: right;
+  margin-top: 3rem;
+}
+
+.timerec_icon {
+  align-items: flex-start;
+}
+
+.recipe__infoRec {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &:not(:last-child) {
+    margin-right: 4.5rem;
+  }
+
+  &-iconRec {
+    height: 2.2rem;
+    width: 2.2rem;
+    fill: $color-primary;
+    margin-right: 0.7rem;
+  }
+
+  &-dataRec {
+    margin-right: 0.5rem;
+    font-weight: 700;
+    color:#918581;
+  }
+  &-textRec{
+    color: #918581;
+    font-size:1.2rem;
+  }
+}
