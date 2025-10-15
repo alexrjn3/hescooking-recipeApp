@@ -1,15 +1,18 @@
-O aplicatie web de cautat retete. A fost realizata in vanilla JS (cu arhitectura MVC). Utilizatorul scrie o reteta in search si ii vor fi afisate rezultate dintr-un API. Se vor recomanda si retete bazat pe cautarile efectuate, descarcarea retetei dorita (jpg), cat si un istoric al cautarilor.
+A web application for searching recipes, built using vanilla JavaScript and the MVC architecture. The user can type a recipe name into the search bar, and results are fetched from an external API.
+The app also provides recipe recommendations based on previous searches, allows the user to download the selected recipe as a JPG (including its ingredients for convenient shopping), and maintains a search history.
 
-Aplicatia a fost intr-un curs pe care l-am urmat, insa am venit cu cateva imbunatatiri.
+This application was originally developed as part of a course I followed, but I added several improvements to enhance its functionality:
+- Implemented search history saving using localStorage. The previous searches are displayed on the home page, along with a “Delete History” button.
+- Added a “Download Recipe” button that generates a JPG image containing the selected recipe and its ingredients — making it more convenient to shop for what’s needed.
+- Implemented a recommendation system based on past searches.
+- I created a menu system that allows adding future pages/features.
+- All the new features were implemented while continuing to follow the MVC architecture.
 
-Am realizat salvarea cautarile anterioare cu ajutorul localStorage. Ele vor fi afisate pe pagina home, alaturi cu un buton Delete History.
-Am creat un buton pentru a descarca reteta (jpg) cu ingredientele necesare pentru a fi mult mai convenabila partea de cumparat a ingredientelor.
-Se vor afisa sugestii bazate pe cautarile anterioare. Dacă utilizatorul a vizionat rețete cu titluri similare (ex: “Chicken Curry”, “Chicken Soup”, “Rice with Chicken”), aplicația extrage cele mai frecvente cuvinte (aici: “Chicken”, “Rice”) și caută automat rețete noi care conțin acele cuvinte.
--	La fiecare cautare si intrare pe reteta salvam in istoric (localStorage)
--	state.recommend este o structura de date Sett unde vom salva cuvintele din titlul retetei. Simultan vom avea un array de frecventa fiecarui cuvant
--	Alegem primele 2 dintre cele mai frecvente cuvinte (fara valori falsy ca: best, with, &. Care se pot afla in titlurile retetei)
--	Cautam in api aceste 2 cuvinte si afisam 6 retete (3 pentru fiecare)
--	Algo: Bag-of-words simplificat
-Am realizat si un meniu unde pot fi adaugate diferite pagini.
-Am continuat sa lucrez cu arhitectura MVC la adaugarea noilor caracteristici
+Recommendation system based on past searches:
+1. If the user has viewed recipes with similar titles (e.g., “Chicken Curry”, “Chicken Soup”, “Rice with Chicken”), the app extracts the most frequent words (in this case: “Chicken”, “Rice”) and automatically searches for new recipes containing those words.
+2, For every search and recipe view, the data is stored in localStorage.
+3. The state.recommend structure is implemented as a Set, where keywords from recipe titles are stored. At the same time, a frequency array tracks how often each keyword appears.
+4. The app selects the top two most frequent keywords (excluding filler words like “best”, “with”, “&”) and uses them to query the API.
+5. The results display six recommended recipes (three for each keyword).
 
+The underlying algorithm follows a simplified Bag-of-Words approach.
